@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+     <head>
+	      <title>
+		      range
+			</title>
+		</head>
+		   <body>
+		      minprice:
+			  <input type="range"id="minprice"value="0"step="1">
+			  max price:
+			  <input type="range"id="maxprice"value="0"step="1">
+			  <input type="button"value="apply range"onclick="change()">
+			      <script>
+				      var minpriceInput=document.getElementById('minprice');
+					  var maxpriceInput=document.getElementById('maxprice');
+					  
+					    function change()
+						{
+						var minprice = parseInt(minpriceInput.value);
+						var maxprice = parseInt(maxpriceInput.value);
+						  
+						   if(minprice<=0 || maxprice<=0)
+						     {
+							 alert('both prices are must be grater then 0');
+							 resetvalues();
+							 return;
+							 }
+						  else if(maxprice < minprice)
+						  {
+						  alert('must be prices are equal');
+						  resetvalues();
+						  return;
+						   }
+						  else
+						  {
+						   alert('validation is successfull');
+						  }
+						}
+						function resetvalues()
+						{
+						minpriceInput.value=0;
+						maxpriceInput.value=0;
+						}
+					 
+				  </script>
+		   </body>
+	</html>
